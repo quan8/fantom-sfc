@@ -42,10 +42,10 @@ contract LegacyStaker is UnitTestStakers {
         emit DeactivatedDelegation(delegator, stakerID);
     }
 
-    function lockUpStake(uint256 lockDuration) external {
+    function lockUpStake(uint256 lockDuration) override external {
     }
 
-    function lockUpDelegation(uint256 lockDuration, uint256 toStakerID) external {
+    function lockUpDelegation(uint256 lockDuration, uint256 toStakerID) override external {
     }
 }
 

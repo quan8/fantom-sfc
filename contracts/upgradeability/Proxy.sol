@@ -8,7 +8,7 @@ pragma solidity ^0.7.2;
  * It defines a fallback function that delegates all calls to the address
  * returned by the abstract _implementation() internal function.
  */
-contract Proxy {
+abstract contract Proxy {
   /**
    * @dev Fallback function.
    * Implemented entirely in `_fallback`.
@@ -24,7 +24,7 @@ contract Proxy {
   /**
    * @return The Address of the implementation.
    */
-  function _implementation() internal view returns (address);
+  function _implementation() virtual internal view returns (address);
 
   /**
    * @dev Delegates execution to an implementation contract.

@@ -90,7 +90,7 @@ contract UpgradeabilityProxy is BaseUpgradeabilityProxy {
   }
 
   /**
-   * @return The admin slot.
+   * @return adm The admin slot.
    */
   function _admin() internal view returns (address adm) {
     bytes32 slot = ADMIN_SLOT;

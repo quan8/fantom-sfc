@@ -4,11 +4,11 @@ pragma solidity ^0.7.2;
 import "../sfc/Staker.sol";
 
 contract TestStakers is Stakers {
-    function stakeLockPeriodTime() public pure returns (uint256) {
+    function stakeLockPeriodTime() public override pure returns (uint256) {
         return 1 * 60;
     }
 
-    function delegationLockPeriodTime() public pure returns (uint256) {
+    function delegationLockPeriodTime() public override pure returns (uint256) {
         return 1 * 60;
     }
 }
@@ -26,15 +26,15 @@ contract UnitTestStakers is Stakers {
         return 0.0000000001 * 1e18;
     }
 
-    function minStake() public pure returns (uint256) {
+    function minStake() public override pure returns (uint256) {
         return 1 * 1e18;
     }
 
-    function minStakeIncrease() public pure returns (uint256) {
+    function minStakeIncrease() public override pure returns (uint256) {
         return 1 * 1e18;
     }
 
-    function minDelegation() public pure returns (uint256) {
+    function minDelegation() public override pure returns (uint256) {
         return 1 * 1e18;
     }
 
@@ -81,7 +81,7 @@ contract UnitTestStakers is Stakers {
         super.createStake("");
     }
 
-    function createDelegation(uint256 to) public payable {
+    function createDelegation(uint256 to) public override payable {
         delegationIDsArr.push(DelegationID(msg.sender, to));
         super._createDelegation(msg.sender, to);
     }

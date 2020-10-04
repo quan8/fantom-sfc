@@ -330,7 +330,7 @@ contract Stakers is Ownable, StakersConstants, Version {
 
     // createDelegation creates new delegation to a given validator
     // Delegated amount is msg.value
-    function createDelegation(uint256 to) external payable {
+    function createDelegation(uint256 to) virtual external payable {
         _createDelegation(msg.sender, to);
     }
 
@@ -939,7 +939,7 @@ contract Stakers is Ownable, StakersConstants, Version {
 
     // lockUpStake locks validator's stake
     // Locked validator isn't allowed to withdraw until lockup period is elapsed
-    function lockUpStake(uint256 lockDuration) external {
+    function lockUpStake(uint256 lockDuration) virtual external {
         require(isLockingFeatureActive(currentEpoch()), "feature was not activated");
         uint256 stakerID = _sfcAddressToStakerID(msg.sender);
         _checkActiveStaker(stakerID);
@@ -955,7 +955,7 @@ contract Stakers is Ownable, StakersConstants, Version {
     event LockingDelegation(address indexed delegator, uint256 indexed stakerID, uint256 fromEpoch, uint256 endTime);
 
     // lockUpDelegation locks delegation stake
-    function lockUpDelegation(uint256 lockDuration, uint256 toStakerID) external {
+    function lockUpDelegation(uint256 lockDuration, uint256 toStakerID) virtual external {
         require(isLockingFeatureActive(currentEpoch()), "feature was not activated");
         address delegator = msg.sender;
         _checkAndUpgradeDelegationStorage(delegator);

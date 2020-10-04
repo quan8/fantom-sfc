@@ -15,7 +15,7 @@ contract StakersConstants {
     /**
      * @dev Minimum amount of stake for a validator, i.e., 3175000 FTM
      */
-    function minStake() public pure returns (uint256) {
+    function minStake() public virtual pure returns (uint256) {
         // 3175000 FTM
         return 3175000 * 1e18;
     }
@@ -23,7 +23,7 @@ contract StakersConstants {
     /**
      * @dev Minimum amount of stake for an increase, i.e., 1 FTM
      */
-    function minStakeIncrease() public pure returns (uint256) {
+    function minStakeIncrease() public virtual pure returns (uint256) {
         return 1 * 1e18;
     }
 
@@ -37,7 +37,7 @@ contract StakersConstants {
     /**
      * @dev Minimum amount for a delegation, i.e., 1 FTM
      */
-    function minDelegation() public pure returns (uint256) {
+    function minDelegation() public virtual pure returns (uint256) {
         return 1 * 1e18;
     }
 
@@ -104,7 +104,7 @@ contract StakersConstants {
     /**
      * @dev the period of time that stake is locked
      */
-    function stakeLockPeriodTime() public pure returns (uint256) {
+    function stakeLockPeriodTime() virtual public pure returns (uint256) {
         // 7 days
         return 60 * 60 * 24 * 7;
     }
@@ -116,7 +116,7 @@ contract StakersConstants {
         return 3;
     }
 
-    function delegationLockPeriodTime() public pure returns (uint256) {
+    function delegationLockPeriodTime() public virtual pure returns (uint256) {
         // 7 days
         return 60 * 60 * 24 * 7;
     }

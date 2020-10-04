@@ -1,10 +1,10 @@
-pragma solidity ^0.5.0;
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.7.2;
 
 import "./UnitTestStakers.sol";
 
-
 contract LegacyStaker is UnitTestStakers {
-    constructor (uint256 firstEpoch) public UnitTestStakers(firstEpoch) {
+    constructor (uint256 firstEpoch) UnitTestStakers(firstEpoch) {
     }
 
     function createLegacyDelegation(uint256 to) external payable {

@@ -1,4 +1,5 @@
-pragma solidity ^0.5.0;
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.7.2;
 
 import "../sfc/Staker.sol";
 
@@ -37,7 +38,7 @@ contract UnitTestStakers is Stakers {
         return 1 * 1e18;
     }
 
-    constructor (uint256 firstEpoch) public {
+    constructor (uint256 firstEpoch) {
         currentSealedEpoch = firstEpoch;
     }
 

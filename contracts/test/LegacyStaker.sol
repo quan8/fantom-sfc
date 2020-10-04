@@ -4,6 +4,8 @@ pragma solidity ^0.7.2;
 import "./UnitTestStakers.sol";
 
 contract LegacyStaker is UnitTestStakers {
+    using SafeMath for uint256;
+
     constructor (uint256 firstEpoch) UnitTestStakers(firstEpoch) {
     }
 
